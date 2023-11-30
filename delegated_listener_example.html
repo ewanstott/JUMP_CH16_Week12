@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+<script>
+  // delegated listener
+
+  // reference to the root id
+  const rootRef = document.getElementById("root");
+
+  //make buttons
+  const buttons = ["About", "Products", "Contact"];
+
+  //turn into html
+  const html = buttons.map((button) => {
+    return `<button>${button}</button>`;
+  });
+  // put buttons in the DOM
+  rootRef.innerHTML = html.join("");
+
+  //   Event listener - find all buttons in the DOM
+  const buttonRefs = document.getElementsByTagName("button");
+  console.log(buttonRefs);
+
+  //loop over buttons and attach Event Listeners
+  for (let i = 0; i < buttonRefs.length; i++) {
+    buttonRefs[i].addEventListener("click", () => {
+      console.log("Btn clicked");
+    });
+  }
+</script>

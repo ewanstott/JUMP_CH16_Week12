@@ -4,9 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script type="module" src="entry.js"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="mainDiv"></div>
   </body>
 </html>
+<script>
+  // reference to the root id
+  const mainDivRef = document.getElementById("mainDiv");
+
+  //can reuse this function (HTML Factory Function)
+  const genHtml = (tag, text, root) => {
+    let _text = document.createTextNode(text); //createTextNode - This method creates a new text node with the specified text content
+    let element = document.createElement(tag); //createElement - This method creates a new HTML element with the specified tag name e.g. H1 or p
+    element.append(_text);
+    mainDivRef.append(element); //append element to the DOM
+  };
+
+  genHtml("H1", "I am a H1 tag", mainDivRef);
+  genHtml("p", "I am a P tag", mainDivRef);
+  genHtml("button", "I am a button", mainDivRef);
+
+  //   HTML FACTORY:
+  // let text = document.createTextNode("Hello World!"); //createTextNode - This method creates a new text node with the specified text content
+  // let element = document.createElement("h1"); //createElement - This method creates a new HTML element with the specified tag name e.g. H1 or p
+  // element.classList.add("demo");
+  // element.setAttribute("id", "one");
+  // element.append(text); //put the text inside the element
+
+  // rootRef.append(element); //append element to the DOM
+</script>

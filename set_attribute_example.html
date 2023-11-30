@@ -1,0 +1,40 @@
+<!-- Active & toggle example -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .active {
+        background-color: red;
+      }
+      .active2 {
+        background-color: aqua;
+        scale: 0.2;
+        font-size: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="" id="link">Where do i go!</a>
+    <button id="btn">Toggle</button>
+    <button id="btn2">Button 2</button>
+  </body>
+</html>
+<script>
+  //dom refs
+  const btnRef = document.getElementById("btn");
+  const aRef = document.getElementById("link");
+  const btn2Ref = document.getElementById("btn2");
+
+  //listeners
+  btnRef.addEventListener("click", () => {
+    aRef.setAttribute("href", "amazon.com"); //set attribute used to add link url to button when clicked
+  });
+
+  btn2Ref.addEventListener("click", () => {
+    btn2.classList.toggle("active2");
+  });
+</script>

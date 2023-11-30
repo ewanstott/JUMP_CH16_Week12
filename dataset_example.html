@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .active {
+        background-color: red;
+      }
+      .active2 {
+        background-color: aqua;
+        scale: 0.2;
+        font-size: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="" id="link" data-example="hello-world">Where do i go!</a>
+    <button id="btn">Toggle</button>
+  </body>
+</html>
+<script>
+  //dom refs
+  const btnRef = document.getElementById("btn");
+  const aRef = document.getElementById("link");
+
+  //listeners
+  btnRef.addEventListener("click", () => {
+    aRef.setAttribute("href", "amazon.com");
+    console.log(aRef.dataset.example); //dataset example (used to store a label for future reference)
+  });
+</script>
